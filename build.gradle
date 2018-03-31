@@ -23,6 +23,16 @@ dockerCompose {
 }
 dockerCompose.isRequiredBy(test)
 
+test {
+	dependsOn cleanTest
+
+	testLogging {
+		exceptionFormat "full"
+		events "skipped", "passed", "failed"
+		displayGranularity 2
+	}
+}
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -43,4 +53,5 @@ dependencies {
 	runtime 'org.postgresql:postgresql'
 
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile 'io.rest-assured:rest-assured:3.0.6'
 }
