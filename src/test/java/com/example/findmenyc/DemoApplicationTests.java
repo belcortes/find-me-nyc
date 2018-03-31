@@ -69,6 +69,7 @@ public class DemoApplicationTests {
 				false
 		);
 
+		// Test adding a new user
 		given()
 				.contentType(JSON)
 				.and().body(userNotYetInDb)
@@ -95,7 +96,7 @@ public class DemoApplicationTests {
 				.and().body(containsString("Second"))
 				.and().body(containsString("User"));
 
-		
+
 		// Test updating a user
 		secondUser.setFirstName("changed_name");
 

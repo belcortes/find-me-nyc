@@ -50,7 +50,7 @@ public class UsersController {
         return userRepository.save(userFromDb);
     }
 
-    @DeleteMapping("/{userId}")
+    @DeleteMapping("/users/{userId}")
     public HttpStatus deleteUserById(@PathVariable Long userId) throws EmptyResultDataAccessException {
         userRepository.deleteById(userId);
         return HttpStatus.OK;
