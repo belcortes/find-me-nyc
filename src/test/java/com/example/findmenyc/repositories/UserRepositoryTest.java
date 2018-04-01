@@ -1,7 +1,7 @@
 package com.example.findmenyc.repositories;
 
 import com.example.findmenyc.models.User;
-import org.assertj.core.internal.Iterables;
+import com.google.common.collect.Iterables;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +10,9 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 
 import static org.junit.Assert.assertThat;
