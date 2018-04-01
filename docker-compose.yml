@@ -10,13 +10,21 @@ services:
     working_dir: /app
     command: './gradlew bootRun'
     environment:
-        - GRADLE_USER_HOME=cache
-        - SPRING_PROFILES_ACTIVE=dev
+      - GRADLE_USER_HOME=cache
+      - SPRING_PROFILES_ACTIVE=dev
   postgresdev:
-        image: postgres
-        ports:
-         - "5432:5432"
-        environment:
-         - POSTGRES_PASSWORD=password
-         - POSTGRES_USER=postgres
-         - POSTGRES_DB=pgdev
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=pgdev
+  react:
+    image: node
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    volumes:
+      - ./ui:/app
+    command: 'npm start'
