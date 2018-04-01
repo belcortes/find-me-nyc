@@ -36,4 +36,5 @@ public class User {
         this.lastSearch = lastSearch;
         this.isAdmin = isAdmin;
     }
+
 }
