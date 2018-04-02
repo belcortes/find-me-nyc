@@ -10,7 +10,7 @@ class App extends Component {
     users: []
   }
 
-  componentWillMount() {
+  componentDidMount() {
 
     axios.get('/users')
         .then((response) => {

@@ -61,7 +61,7 @@ public class UsersUIFeatureTest {
         System.setProperty("selenide.browser", "Chrome");
 
 //         Visit the UI in a browser
-        open("http://localhost:3000");
+        open("http://localhost:3000/users");
 
 //         There should only be two users
         $$("[data-user-display]").shouldHave(size(2));
