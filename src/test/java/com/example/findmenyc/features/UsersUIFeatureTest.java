@@ -69,12 +69,13 @@ public class UsersUIFeatureTest {
         $("#user-" + firstUserId + "-first-name").shouldHave(text("First"));
         $("#user-" + firstUserId + "-last-name").shouldHave(text("User"));
         $("#user-" + firstUserId + "-last-search").shouldHave(text("first search"));
-//        $("#user-" + firstUserId + "-admin").shouldBe(false);
+        $("#user-" + firstUserId + "-admin").shouldHave(text("No"));
 
         $("#user-" + secondUserId + "-user-name").shouldHave(text("user2"));
         $("#user-" + secondUserId + "-first-name").shouldHave(text("Second"));
         $("#user-" + secondUserId + "-last-name").shouldHave(text("User"));
         $("#user-" + secondUserId + "-last-search").shouldHave(text("second search"));
+        $("#user-" + secondUserId + "-admin").shouldHave(text("Yes"));
 
     }
 }

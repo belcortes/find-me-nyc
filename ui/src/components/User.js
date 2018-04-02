@@ -17,6 +17,13 @@ const User = (props) => {
         <div id={`user-${props.user.id}-last-search`}>
           {props.user.lastSearch}
         </div>
+
+        <div id={`user-${props.user.id}-admin`}>
+          {
+            props.user.admin ?
+            "Yes" : "No"
+          }
+        </div>
       </div>
     </div>
   )
