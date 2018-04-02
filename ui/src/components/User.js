@@ -26,7 +26,7 @@ const User = (props) => {
         </div>
         <button
           id={`delete-user-${props.user.id}`}
-          onClick={() => {props.deleteUser(props.user.id, props.index)}}>
+          onClick={() => props.deleteUser(props.user.id, props.index)}>
 
           Delete
         </button>

@@ -14,7 +14,7 @@ const UserPage = (props) => {
               user={user}
               key={index}
               index={index}
-              deleteUser={this.deleteUser} />
+              deleteUser={props.deleteUser} />
           )
         })
       }

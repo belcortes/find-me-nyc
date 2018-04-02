@@ -1,59 +1,59 @@
-19:10:33.886 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:+HeapDumpOnOutOfMemoryError, -Xmx1024m, -Dfile.encoding=UTF-8, -Duser.country, -Duser.language=en, -Duser.variant]
-19:10:34.183 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=17d21f84-a272-440d-8bc9-ed3c897da0b9,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
-19:10:34.244 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface eth0
-19:10:34.249 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
-19:10:34.257 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? true
-19:10:34.261 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /172.20.0.3
-19:10:34.265 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote multicast interface eth0
-19:10:34.270 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo
-19:10:34.274 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
-19:10:34.277 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? false
-19:10:34.280 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
-19:10:34.292 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [4ded3f94-d241-47ee-b990-5ad78eaabe13 port:46297, addresses:[/127.0.0.1]].
-19:10:34.305 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Mon Apr 02 19:10:34 GMT 2018, with address: [4ded3f94-d241-47ee-b990-5ad78eaabe13 port:46297, addresses:[/127.0.0.1]]
-19:10:34.314 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [4ded3f94-d241-47ee-b990-5ad78eaabe13 port:46297, addresses:[/127.0.0.1]]
-19:10:34.322 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=17d21f84-a272-440d-8bc9-ed3c897da0b9,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
-19:10:34.329 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [4ded3f94-d241-47ee-b990-5ad78eaabe13 port:46297, addresses:[/127.0.0.1]], context: DefaultDaemonContext[uid=17d21f84-a272-440d-8bc9-ed3c897da0b9,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
-19:10:34.400 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
-19:10:34.415 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
-19:10:34.452 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
-19:10:34.458 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
-19:10:34.471 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
-19:10:34.501 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
-19:10:34.503 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:50996 to /127.0.0.1:46297.
-19:10:34.519 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
-19:10:34.532 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
-19:10:34.871 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Build
-19:10:34.875 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received non-IO message from client: Build{id=058e28d1-b418-4c96-9312-a1f8ace3c1b0.1, currentDir=/app}
-19:10:34.881 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=058e28d1-b418-4c96-9312-a1f8ace3c1b0.1, currentDir=/app}.
-19:10:34.885 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=058e28d1-b418-4c96-9312-a1f8ace3c1b0.1, currentDir=/app} with connection: socket connection from /127.0.0.1:46297 to /127.0.0.1:50996.
-19:10:34.896 [ERROR] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=058e28d1-b418-4c96-9312-a1f8ace3c1b0.1, currentDir=/app}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:46297 to /127.0.0.1:50996] after 0.0 minutes of idle
-19:10:34.899 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [4ded3f94-d241-47ee-b990-5ad78eaabe13 port:46297, addresses:[/127.0.0.1]]
-19:10:34.902 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [4ded3f94-d241-47ee-b990-5ad78eaabe13 port:46297, addresses:[/127.0.0.1]]
-19:10:34.911 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
-19:10:34.916 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
-19:10:34.931 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
-19:10:34.936 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
-19:10:34.939 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
-19:10:34.941 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=058e28d1-b418-4c96-9312-a1f8ace3c1b0.1, currentDir=/app}. Dispatching build started information...
-19:10:34.946 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 16: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
-19:10:34.964 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk/bin, JAVA_JCE=unlimited, SPRING_PROFILES_ACTIVE=dev, JAVA_HOME=/opt/jdk, OLDPWD=/app, GLIBC_VERSION=2.27-r0, LANG=C.UTF-8, JAVA_VERSION_MAJOR=8, GRADLE_USER_HOME=cache, HOSTNAME=f0bae8f66a1c, GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc, JAVA_VERSION_MINOR=162, PWD=/app, JAVA_PACKAGE=jdk, JAVA_VERSION_BUILD=12, HOME=/root, SHLVL=1}
-19:10:34.995 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
-19:10:34.998 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 27). The daemon log file: /app/cache/daemon/4.5.1/daemon-27.out.log
-19:10:35.005 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 954.7 MB]
-19:10:35.013 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.CloseInput
-19:10:35.016 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@543226fc
-19:10:35.022 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
-19:10:35.025 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
-19:10:35.029 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
-19:10:35.033 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=17d21f84-a272-440d-8bc9-ed3c897da0b9,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+19:36:26.446 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:+HeapDumpOnOutOfMemoryError, -Xmx1024m, -Dfile.encoding=UTF-8, -Duser.country, -Duser.language=en, -Duser.variant]
+19:36:26.811 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=6f121ac8-cad8-4267-9c13-4bd068fff157,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+19:36:26.849 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface eth0
+19:36:26.853 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+19:36:26.856 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? true
+19:36:26.860 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /172.20.0.3
+19:36:26.863 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote multicast interface eth0
+19:36:26.868 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo
+19:36:26.871 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
+19:36:26.875 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? false
+19:36:26.878 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
+19:36:26.886 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [86b978a8-fa3e-4ed6-81f3-0a1aa09b2844 port:41759, addresses:[/127.0.0.1]].
+19:36:26.901 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Mon Apr 02 19:36:26 GMT 2018, with address: [86b978a8-fa3e-4ed6-81f3-0a1aa09b2844 port:41759, addresses:[/127.0.0.1]]
+19:36:26.905 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [86b978a8-fa3e-4ed6-81f3-0a1aa09b2844 port:41759, addresses:[/127.0.0.1]]
+19:36:26.908 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=6f121ac8-cad8-4267-9c13-4bd068fff157,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+19:36:26.913 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [86b978a8-fa3e-4ed6-81f3-0a1aa09b2844 port:41759, addresses:[/127.0.0.1]], context: DefaultDaemonContext[uid=6f121ac8-cad8-4267-9c13-4bd068fff157,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+19:36:26.943 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+19:36:26.952 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+19:36:26.978 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+19:36:26.983 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
+19:36:26.988 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
+19:36:27.022 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
+19:36:27.031 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
+19:36:27.037 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:56560 to /127.0.0.1:41759.
+19:36:27.039 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+19:36:27.389 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Build
+19:36:27.392 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received non-IO message from client: Build{id=f58fdb71-78b5-4764-a666-abf062923253.1, currentDir=/app}
+19:36:27.394 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=f58fdb71-78b5-4764-a666-abf062923253.1, currentDir=/app}.
+19:36:27.396 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=f58fdb71-78b5-4764-a666-abf062923253.1, currentDir=/app} with connection: socket connection from /127.0.0.1:41759 to /127.0.0.1:56560.
+19:36:27.403 [ERROR] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=f58fdb71-78b5-4764-a666-abf062923253.1, currentDir=/app}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:41759 to /127.0.0.1:56560] after 0.0 minutes of idle
+19:36:27.405 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [86b978a8-fa3e-4ed6-81f3-0a1aa09b2844 port:41759, addresses:[/127.0.0.1]]
+19:36:27.407 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [86b978a8-fa3e-4ed6-81f3-0a1aa09b2844 port:41759, addresses:[/127.0.0.1]]
+19:36:27.430 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+19:36:27.435 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+19:36:27.466 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+19:36:27.476 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+19:36:27.485 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+19:36:27.495 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=f58fdb71-78b5-4764-a666-abf062923253.1, currentDir=/app}. Dispatching build started information...
+19:36:27.501 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 16: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+19:36:27.528 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk/bin, JAVA_JCE=unlimited, SPRING_PROFILES_ACTIVE=dev, JAVA_HOME=/opt/jdk, OLDPWD=/app, GLIBC_VERSION=2.27-r0, LANG=C.UTF-8, JAVA_VERSION_MAJOR=8, GRADLE_USER_HOME=cache, HOSTNAME=db553dae2396, GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc, JAVA_VERSION_MINOR=162, PWD=/app, JAVA_PACKAGE=jdk, JAVA_VERSION_BUILD=12, HOME=/root, SHLVL=1}
+19:36:27.562 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.CloseInput
+19:36:27.566 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@64be82a
+19:36:27.582 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+19:36:27.586 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 27). The daemon log file: /app/cache/daemon/4.5.1/daemon-27.out.log
+19:36:27.592 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 954.7 MB]
+19:36:27.597 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+19:36:27.610 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+19:36:27.623 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+19:36:27.629 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=6f121ac8-cad8-4267-9c13-4bd068fff157,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/app/cache/daemon,pid=27,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
 :compileJava
-:processResources UP-TO-DATE
+:processResources
 :classes
 :bootRun
-19:10:57.390 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Included patterns for restart : []
-19:10:57.402 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Excluded patterns for restart : [/spring-boot-starter/target/classes/, /spring-boot-autoconfigure/target/classes/, /spring-boot-starter-[\w-]+/, /spring-boot/target/classes/, /spring-boot-actuator/target/classes/, /spring-boot-devtools/target/classes/]
-19:10:57.402 [main] DEBUG org.springframework.boot.devtools.restart.ChangeableUrls - Matching URLs for reloading : [file:/app/build/classes/java/main/, file:/app/build/resources/main/]
+19:36:49.706 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Included patterns for restart : []
+19:36:49.717 [main] DEBUG org.springframework.boot.devtools.settings.DevToolsSettings - Excluded patterns for restart : [/spring-boot-starter/target/classes/, /spring-boot-autoconfigure/target/classes/, /spring-boot-starter-[\w-]+/, /spring-boot/target/classes/, /spring-boot-actuator/target/classes/, /spring-boot-devtools/target/classes/]
+19:36:49.725 [main] DEBUG org.springframework.boot.devtools.restart.ChangeableUrls - Matching URLs for reloading : [file:/app/build/classes/java/main/, file:/app/build/resources/main/]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -63,40 +63,40 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.0.0.RELEASE)
 
-2018-04-02 19:10:59.064  INFO 65 --- [  restartedMain] com.example.findmenyc.DemoApplication    : Starting DemoApplication on f0bae8f66a1c with PID 65 (/app/build/classes/java/main started by root in /app)
-2018-04-02 19:10:59.067  INFO 65 --- [  restartedMain] com.example.findmenyc.DemoApplication    : The following profiles are active: dev
-2018-04-02 19:10:59.311  INFO 65 --- [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21b3e6df: startup date [Mon Apr 02 19:10:59 GMT 2018]; root of context hierarchy
-2018-04-02 19:11:05.325  INFO 65 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fccc2433] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-04-02 19:11:06.547  INFO 65 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2018-04-02 19:11:06.646  INFO 65 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-04-02 19:11:06.646  INFO 65 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.28
-2018-04-02 19:11:06.677  INFO 65 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
-2018-04-02 19:11:07.247  INFO 65 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-04-02 19:11:07.247  INFO 65 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7940 ms
-2018-04-02 19:11:07.676  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2018-04-02 19:11:07.696  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-04-02 19:11:07.697  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-04-02 19:11:07.697  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-04-02 19:11:07.697  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-04-02 19:11:08.109  INFO 65 --- [  restartedMain] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
-2018-04-02 19:11:08.133  INFO 65 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2018-04-02 19:11:08.518  INFO 65 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2018-04-02 19:11:08.532  INFO 65 --- [  restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://postgresdev:5432/pgdev (PostgreSQL 10.3)
-2018-04-02 19:11:08.730  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.041s)
-2018-04-02 19:11:08.750  INFO 65 --- [  restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "public"."flyway_schema_history"
-2018-04-02 19:11:08.805  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
-2018-04-02 19:11:08.818  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version 1 - Create users table
-2018-04-02 19:11:08.834  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public" (execution time 00:00.085s)
-2018-04-02 19:11:08.839  INFO 65 --- [  restartedMain] o.f.c.i.c.SqlScriptFlywayCallback        : Executing SQL callback: afterMigrate
-2018-04-02 19:11:09.343  INFO 65 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-04-02 19:11:09.422  INFO 65 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-04-02 19:36:51.385  INFO 65 --- [  restartedMain] com.example.findmenyc.DemoApplication    : Starting DemoApplication on db553dae2396 with PID 65 (/app/build/classes/java/main started by root in /app)
+2018-04-02 19:36:51.389  INFO 65 --- [  restartedMain] com.example.findmenyc.DemoApplication    : The following profiles are active: dev
+2018-04-02 19:36:51.658  INFO 65 --- [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cce787c: startup date [Mon Apr 02 19:36:51 GMT 2018]; root of context hierarchy
+2018-04-02 19:36:57.478  INFO 65 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3849d48a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-02 19:36:58.632  INFO 65 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-04-02 19:36:58.718  INFO 65 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-04-02 19:36:58.718  INFO 65 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-04-02 19:36:58.758  INFO 65 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-04-02 19:36:59.243  INFO 65 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-02 19:36:59.243  INFO 65 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7593 ms
+2018-04-02 19:36:59.664  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-04-02 19:36:59.673  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-02 19:36:59.673  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-02 19:36:59.674  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-02 19:36:59.674  INFO 65 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-02 19:37:00.097  INFO 65 --- [  restartedMain] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
+2018-04-02 19:37:00.126  INFO 65 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-04-02 19:37:00.487  INFO 65 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-04-02 19:37:00.502  INFO 65 --- [  restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://postgresdev:5432/pgdev (PostgreSQL 10.3)
+2018-04-02 19:37:00.707  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.035s)
+2018-04-02 19:37:00.726  INFO 65 --- [  restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "public"."flyway_schema_history"
+2018-04-02 19:37:00.793  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2018-04-02 19:37:00.815  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version 1 - Create users table
+2018-04-02 19:37:00.833  INFO 65 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public" (execution time 00:00.107s)
+2018-04-02 19:37:00.839  INFO 65 --- [  restartedMain] o.f.c.i.c.SqlScriptFlywayCallback        : Executing SQL callback: afterMigrate
+2018-04-02 19:37:01.266  INFO 65 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-02 19:37:01.317  INFO 65 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2018-04-02 19:11:09.809  INFO 65 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.14.Final}
-2018-04-02 19:11:09.829  INFO 65 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-04-02 19:11:10.010  INFO 65 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-04-02 19:11:10.533  INFO 65 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2018-04-02 19:11:10.824  INFO 65 --- [  restartedMain] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-04-02 19:37:01.605  INFO 65 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.14.Final}
+2018-04-02 19:37:01.610  INFO 65 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-04-02 19:37:01.786  INFO 65 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-04-02 19:37:02.324  INFO 65 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2018-04-02 19:37:02.575  INFO 65 --- [  restartedMain] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
 
 java.lang.reflect.InvocationTargetException: null
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_162]
@@ -153,27 +153,40 @@ Caused by: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.
 	at org.postgresql.jdbc.PgConnection.createClob(PgConnection.java:1252) ~[postgresql-42.2.1.jar:42.2.1]
 	... 49 common frames omitted
 
-2018-04-02 19:11:10.871  INFO 65 --- [  restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@34b5c649
-2018-04-02 19:11:12.449  INFO 65 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-04-02 19:11:14.501  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21b3e6df: startup date [Mon Apr 02 19:10:59 GMT 2018]; root of context hierarchy
-2018-04-02 19:11:14.677  WARN 65 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-04-02 19:11:14.887  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST]}" onto public com.example.findmenyc.models.User com.example.findmenyc.controllers.UsersController.createNewUser(com.example.findmenyc.models.User)
-2018-04-02 19:11:14.894  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[PATCH]}" onto public com.example.findmenyc.models.User com.example.findmenyc.controllers.UsersController.updateUserById(java.lang.Long,com.example.findmenyc.models.User) throws javassist.NotFoundException
-2018-04-02 19:11:14.899  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus com.example.findmenyc.controllers.UsersController.deleteUserById(java.lang.Long) throws org.springframework.dao.EmptyResultDataAccessException
-2018-04-02 19:11:14.899  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Iterable<com.example.findmenyc.models.User> com.example.findmenyc.controllers.UsersController.findAllUsers()
-2018-04-02 19:11:14.900  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[GET]}" onto public java.util.Optional<com.example.findmenyc.models.User> com.example.findmenyc.controllers.UsersController.findUserById(java.lang.Long) throws javassist.NotFoundException
-2018-04-02 19:11:14.910  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-04-02 19:11:14.912  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-04-02 19:11:15.045  INFO 65 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-04-02 19:11:15.046  INFO 65 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-04-02 19:11:15.193  INFO 65 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-04-02 19:11:15.946  INFO 65 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2018-04-02 19:11:16.022  INFO 65 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2018-04-02 19:11:16.026  INFO 65 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
-2018-04-02 19:11:16.037  INFO 65 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
-2018-04-02 19:11:16.110  INFO 65 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2018-04-02 19:11:16.115  INFO 65 --- [  restartedMain] com.example.findmenyc.DemoApplication    : Started DemoApplication in 18.635 seconds (JVM running for 20.457)
-2018-04-02 19:11:24.129  INFO 65 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2018-04-02 19:11:24.129  INFO 65 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2018-04-02 19:11:24.197  INFO 65 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 68 ms
-2018-04-02 19:11:24.467  INFO 65 --- [nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-04-02 19:37:02.587  INFO 65 --- [  restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6bb197db
+2018-04-02 19:37:03.951  INFO 65 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-02 19:37:05.866  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cce787c: startup date [Mon Apr 02 19:36:51 GMT 2018]; root of context hierarchy
+2018-04-02 19:37:06.037  WARN 65 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-04-02 19:37:06.208  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Iterable<com.example.findmenyc.models.User> com.example.findmenyc.controllers.UsersController.findAllUsers()
+2018-04-02 19:37:06.218  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[GET]}" onto public java.util.Optional<com.example.findmenyc.models.User> com.example.findmenyc.controllers.UsersController.findUserById(java.lang.Long) throws javassist.NotFoundException
+2018-04-02 19:37:06.218  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST]}" onto public com.example.findmenyc.models.User com.example.findmenyc.controllers.UsersController.createNewUser(com.example.findmenyc.models.User)
+2018-04-02 19:37:06.219  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[PATCH]}" onto public com.example.findmenyc.models.User com.example.findmenyc.controllers.UsersController.updateUserById(java.lang.Long,com.example.findmenyc.models.User) throws javassist.NotFoundException
+2018-04-02 19:37:06.220  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus com.example.findmenyc.controllers.UsersController.deleteUserById(java.lang.Long) throws org.springframework.dao.EmptyResultDataAccessException
+2018-04-02 19:37:06.232  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-02 19:37:06.234  INFO 65 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-02 19:37:06.415  INFO 65 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-02 19:37:06.415  INFO 65 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-02 19:37:06.564  INFO 65 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-02 19:37:07.394  INFO 65 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-04-02 19:37:07.489  INFO 65 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-02 19:37:07.491  INFO 65 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-04-02 19:37:07.506  INFO 65 --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-04-02 19:37:07.592  INFO 65 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-04-02 19:37:07.602  INFO 65 --- [  restartedMain] com.example.findmenyc.DemoApplication    : Started DemoApplication in 17.816 seconds (JVM running for 19.486)
+2018-04-02 19:37:12.317  INFO 65 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-02 19:37:12.318  INFO 65 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-02 19:37:12.371  INFO 65 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 53 ms
+2018-04-02 19:37:12.627  INFO 65 --- [nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-04-02 19:39:28.723  WARN 65 --- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:28.724  WARN 65 --- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:28.836  WARN 65 --- [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:28.838  WARN 65 --- [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:35.023  WARN 65 --- [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:35.025  WARN 65 --- [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:45.304  WARN 65 --- [nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 19:39:45.305  WARN 65 --- [nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 20:39:44.419  WARN 65 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 20:39:44.426  WARN 65 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 20:39:44.579  WARN 65 --- [io-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2018-04-02 20:39:44.586  WARN 65 --- [io-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+thread 14: client disconnection detected, canceling the build
