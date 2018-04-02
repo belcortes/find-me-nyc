@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import axios from 'axios'
 
+import UserPage from './components/UserPage'
+import SearchPage from './components/SearchPage'
+
 class App extends Component {
   state = {
-    users = []
+    users: []
   }
 
   componentWillMount() {
