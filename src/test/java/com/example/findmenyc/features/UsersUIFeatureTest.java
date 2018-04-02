@@ -36,7 +36,7 @@ public class UsersUIFeatureTest {
     }
 
     @Test
-    public void shouldAllowFullCrudFunctionalityForAUser() throws Exception {
+    public void shouldAllowViewEditDeleteFunctionalityForAUser() throws Exception {
 
         User firstUser = new User(
                 "user1",
@@ -85,6 +85,41 @@ public class UsersUIFeatureTest {
         $("#user-" + firstUserId).shouldNot(exist);
 
         $$("[data-user-display]").shouldHave(size(1));
+
+    }
+
+    @Test
+    public void shouldAllowSignupFunctionalityForAUser() throws Exception {
+
+        System.setProperty("selenide.browser", "Chrome");
+
+        open("http://localhost:3000/signup");
+
+        $("#signup-form").should(appear);
+
+        // Add a new user
+        $("#new-user-user-name").sendKeys("third_user");
+        $("#new-user-first-name").sendKeys("Third");
+        $("#new-user-last-name").sendKeys("User");
+        $("#new-user-submit").click();
+
+        // Make sure we're now on the users page again
+        $("#users-wrapper").should(appear);
+
+        // Now there should be three Users
+        $$("[data-user-display]").shouldHave(size(1));
+
+        refresh();
+
+        // Now there should be three Users again after the refresh
+        $$("[data-user-display]").shouldHave(size(3));
+
+        // Check that the data is showing up for the third User
+        Long thirdUserId = 1L;
+        $("#user-" + thirdUserId + "-user-name").shouldHave(text("third_user"));
+        $("#user-" + thirdUserId + "-first-name").shouldHave(text("Third"));
+        $("#user-" + thirdUserId + "-last-name").shouldHave(text("User"));
+
 
     }
 }

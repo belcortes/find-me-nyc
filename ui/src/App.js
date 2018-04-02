@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import axios from 'axios'
 
-import UserPage from './components/UserPage'
+import UserList from './components/UserList'
 import SearchPage from './components/SearchPage'
+import Signup from './components/Signup'
 
 class App extends Component {
   state = {
@@ -23,6 +24,17 @@ class App extends Component {
     }
   }
 
+  handleUserChange = (e, index) => {
+    const attributeToChange = e.target.name
+    const newValue = e.target.value
+
+    const updatedUsersList = [...this.state.users]
+    const userToUpdate = updatedUsersList[index]
+    userToUpdate[attributeToChange] = newValue
+    
+    this.setState({users: updatedUsersList})
+}
+
   componentDidMount() {
     axios.get('/users')
       .then((response) => {
@@ -36,18 +48,23 @@ class App extends Component {
   }
 
   render() {
-    const UserPageComponent = () => (
-        <UserPage users={this.state.users} deleteUser={this.deleteUser} />
+    const UserListComponent = () => (
+        <UserList 
+          users={this.state.users} 
+          deleteUser={this.deleteUser} />
     )
 
     const SearchPageComponent = () => <SearchPage />
+
+    const SignupComponent = () => <Signup />
 
     return (
       <div>
         <Router>
           <Switch>
-            <Route exact path="/users" render={UserPageComponent}/>
+            <Route exact path="/users" render={UserListComponent}/>
             <Route exact path="/search" render={SearchPageComponent}/>
+            <Route exact path="/signup" render={SignupComponent}/>
           </Switch>
         </Router>
       </div>
