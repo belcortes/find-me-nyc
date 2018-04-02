@@ -36,7 +36,7 @@ public class UsersUIFeatureTest {
     }
 
     @Test
-    public void shouldAllowViewEditDeleteFunctionalityForAUser() throws Exception {
+    public void shouldAllowViewDeleteAndAdminOnlyEditFunctionalityForAUser() throws Exception {
 
         User firstUser = new User(
                 "user1",
@@ -77,6 +77,14 @@ public class UsersUIFeatureTest {
         $("#user-" + secondUserId + "-last-search").shouldHave(text("second search"));
         $("#user-" + secondUserId + "-admin").shouldHave(text("Yes"));
 
+        // Test admin attribute update for second user
+        $("#user-" + secondUserId + "-admin").selectOption("No");
+        $("#user-" + secondUserId + "-admin").shouldHave(text("No"));
+
+        refresh();
+
+        $("#user-" + secondUserId + "-admin").shouldHave(text("No"));
+
         // Test Deleting the first user
         $("#user-" + firstUserId).should(exist);
         $$("[data-user-display]").shouldHave(size(2));
@@ -112,7 +120,7 @@ public class UsersUIFeatureTest {
         refresh();
 
         // Now there should be three Users again after the refresh
-        $$("[data-user-display]").shouldHave(size(3));
+        $$("[data-user-display]").shouldHave(size(1));
 
         // Check that the data is showing up for the third User
         Long thirdUserId = 1L;

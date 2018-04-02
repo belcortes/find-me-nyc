@@ -18,11 +18,22 @@ const User = (props) => {
           {props.user.lastSearch}
         </div>
 
+        
+
         <div id={`user-${props.user.id}-admin`}>
-          {
-            props.user.admin ?
-            "Yes" : "No"
-          }
+            {
+              props.user.admin ?
+              <select>
+                <option selected value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+              :
+              <select>
+                <option value="true">Yes</option>
+                <option selected value="false">No</option>
+              </select>
+            }
+          
         </div>
         <button
           id={`delete-user-${props.user.id}`}
