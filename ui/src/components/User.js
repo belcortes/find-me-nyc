@@ -19,22 +19,25 @@ const User = (props) => {
         </div>
 
         
-
-        <div id={`user-${props.user.id}-admin`}>
-            {
-              props.user.admin ?
-              <select>
-                <option selected value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-              :
-              <select>
-                <option value="true">Yes</option>
-                <option selected value="false">No</option>
-              </select>
-            }
+        {
+          props.user.admin ?
+          <select 
+            id={`user-${props.user.id}-admin`}
+            onChange={(e) => props.handleUserChange(e, props.index)}
+            onBlur={() => props.updateUser(props.index)} >
+            <option selected value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+          :
+          <select 
+            id={`user-${props.user.id}-admin`}
+            onChange={(e) => props.handleUserChange(e, props.index)}
+            onBlur={() => props.updateUser(props.index)} >
+            <option value="true">Yes</option>
+            <option selected value="false">No</option>
+          </select>
+        }
           
-        </div>
         <button
           id={`delete-user-${props.user.id}`}
           onClick={() => props.deleteUser(props.user.id, props.index)}>

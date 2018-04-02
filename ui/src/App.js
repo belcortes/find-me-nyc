@@ -50,23 +50,35 @@ class App extends Component {
     this.setState({users: updatedUsersList})
 }
 
-  componentDidMount() {
-    axios.get('/users')
-      .then((response) => {
-        console.log(response)
-        this.setState({users: response.data})
-      })
-      .catch((error) => {
-          console.log('Error retrieving users!')
-          console.log(error)
-      })
+updateUser = async (index) => {
+  try {
+      const userToUpdate = this.state.users[index]
+      await axios.patch(`/users/${userToUpdate.id}`, userToUpdate)
+  } catch(error) {
+      console.log('Error updating idea!')
+      console.log(error)
   }
+}
+
+componentDidMount() {
+  axios.get('/users')
+    .then((response) => {
+      console.log(response)
+      this.setState({users: response.data})
+    })
+    .catch((error) => {
+        console.log('Error retrieving users!')
+        console.log(error)
+    })
+}
 
   render() {
     const UserListComponent = () => (
         <UserList 
           users={this.state.users} 
-          deleteUser={this.deleteUser} />
+          deleteUser={this.deleteUser}
+          handleUserChange={this.handleUserChange}
+          updateUser={this.updateUser} />
     )
 
     const SearchPageComponent = () => <SearchPage />

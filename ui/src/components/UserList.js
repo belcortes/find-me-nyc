@@ -14,7 +14,9 @@ const UserPage = (props) => {
               user={user}
               key={index}
               index={index}
-              deleteUser={props.deleteUser} />
+              deleteUser={props.deleteUser}
+              handleUserChange={props.handleUserChange}
+              updateUser={props.updateUser} />
           )
         })
       }
