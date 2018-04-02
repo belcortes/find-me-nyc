@@ -39,15 +39,17 @@ class App extends Component {
     }
   }
 
-  handleUserChange = (e, index) => {
-    const attributeToChange = e.target.name
-    const newValue = e.target.value
+handleUserChange = (e, index) => {
+  const attributeToChange = e.target.name
+  console.log(attributeToChange)
+  const newValue = e.target.value
 
-    const updatedUsersList = [...this.state.users]
-    const userToUpdate = updatedUsersList[index]
-    userToUpdate[attributeToChange] = newValue
-    
-    this.setState({users: updatedUsersList})
+  const updatedUsersList = [...this.state.users]
+  const userToUpdate = updatedUsersList[index]
+  userToUpdate[attributeToChange] = newValue
+  
+  this.setState({users: updatedUsersList})
+  console.log(this.state.users)
 }
 
 updateUser = async (index) => {

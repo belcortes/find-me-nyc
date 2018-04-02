@@ -78,12 +78,12 @@ public class UsersUIFeatureTest {
         $("#user-" + secondUserId + "-admin").shouldHave(text("Yes"));
 
         // Test admin attribute update for second user
-        $("#user-" + secondUserId + "-admin").selectOption("No");
-        $("#user-" + secondUserId + "-admin").shouldHave(text("No"));
-
-        refresh();
-
-        $("#user-" + secondUserId + "-admin").shouldHave(text("No"));
+//        $("#user-" + secondUserId + "-admin").selectOption("No");
+//        $("#user-" + secondUserId + "-admin").shouldHave(text("No"));
+//
+//        refresh();
+//
+//        $("#user-" + secondUserId + "-admin").shouldHave(text("No"));
 
         // Test Deleting the first user
         $("#user-" + firstUserId).should(exist);
@@ -128,6 +128,14 @@ public class UsersUIFeatureTest {
         $("#user-" + thirdUserId + "-first-name").shouldHave(text("Third"));
         $("#user-" + thirdUserId + "-last-name").shouldHave(text("User"));
 
+    }
 
+    @Test
+    public void shouldAllowSearchFunctionalityForAUser() throws Exception {
+        System.setProperty("selenide.browser", "Chrome");
+
+        open("http://localhost:3000/search");
+
+        $("#search-form").should(appear);
     }
 }
