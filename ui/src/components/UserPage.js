@@ -7,7 +7,9 @@ const UserPage = (props) => {
   return (
     <div>
       <h1>Users Page!!!</h1>
-      <UserList users={props.users} />
+      <UserList 
+        users={props.users}
+        deleteUser={props.deleteUser} />
     </div>
   )
 }

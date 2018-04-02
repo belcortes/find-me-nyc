@@ -10,6 +10,19 @@ class App extends Component {
     users: []
   }
 
+  deleteUser = async (userId, index) => {
+    try {
+      await axios.delete(`/users/${userId}`)
+
+      const updatedUsersList = [...this.state.users]
+      updatedUsersList.splice(index, 1)
+
+      this.setState({users: updatedUsersList})
+    } catch (error) {
+        console.log(`Error deleting User with ID: ${userId}`)
+    }
+  }
+
   componentDidMount() {
     axios.get('/users')
       .then((response) => {
@@ -24,11 +37,11 @@ class App extends Component {
 
   render() {
     const UserPageComponent = () => (
-        <UserPage users={this.state.users} />
+        <UserPage users={this.state.users} deleteUser={this.deleteUser} />
     )
 
     const SearchPageComponent = () => <SearchPage />
-    
+
     return (
       <div>
         <Router>

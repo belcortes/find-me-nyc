@@ -77,5 +77,14 @@ public class UsersUIFeatureTest {
         $("#user-" + secondUserId + "-last-search").shouldHave(text("second search"));
         $("#user-" + secondUserId + "-admin").shouldHave(text("Yes"));
 
+        // Test Deleting the first user
+        $("#user-" + firstUserId).should(exist);
+        $$("[data-user-display]").shouldHave(size(2));
+
+        $("#delete-user-" + firstUserId).click();
+        $("#user-" + firstUserId).shouldNot(exist);
+
+        $$("[data-user-display]").shouldHave(size(1));
+
     }
 }

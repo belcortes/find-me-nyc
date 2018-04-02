@@ -24,6 +24,12 @@ const User = (props) => {
             "Yes" : "No"
           }
         </div>
+        <button
+          id={`delete-user-${props.user.id}`}
+          onClick={() => {props.deleteUser(props.user.id, props.index)}}>
+
+          Delete
+        </button>
       </div>
     </div>
   )

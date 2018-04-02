@@ -13,7 +13,8 @@ const UserPage = (props) => {
             <User
               user={user}
               key={index}
-              index={index} />
+              index={index}
+              deleteUser={this.deleteUser} />
           )
         })
       }
