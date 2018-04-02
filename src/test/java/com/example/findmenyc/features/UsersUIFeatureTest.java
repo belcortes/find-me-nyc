@@ -137,5 +137,10 @@ public class UsersUIFeatureTest {
         open("http://localhost:3000/search");
 
         $("#search-form").should(appear);
+
+        $("#search-input").sendKeys("new search");
+        $("#search-submit").click();
+
+//        $("#search-form").should(appear);
     }
 }
