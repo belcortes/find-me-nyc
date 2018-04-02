@@ -64,5 +64,17 @@ public class UsersUIFeatureTest {
 
         $$("[data-user-display]").shouldHave(size(2));
 
+        // Test that all data shows up for each user
+        $("#user-" + firstUserId + "-user-name").shouldHave(text("user1"));
+        $("#user-" + firstUserId + "-first-name").shouldHave(text("First"));
+        $("#user-" + firstUserId + "-last-name").shouldHave(text("User"));
+        $("#user-" + firstUserId + "-last-search").shouldHave(text("first search"));
+//        $("#user-" + firstUserId + "-admin").shouldBe(false);
+
+        $("#user-" + secondUserId + "-user-name").shouldHave(text("user2"));
+        $("#user-" + secondUserId + "-first-name").shouldHave(text("Second"));
+        $("#user-" + secondUserId + "-last-name").shouldHave(text("User"));
+        $("#user-" + secondUserId + "-last-search").shouldHave(text("second search"));
+
     }
 }
