@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import axios from 'axios'
 
 class App extends Component {
+  state = {
+    users = []
+  }
 
   componentWillMount() {
 
     axios.get('/users')
         .then((response) => {
           console.log(response)
+          this.setState({users: response.data})
         })
         .catch((error) => {
             console.log('Error retrieving users!')
@@ -16,9 +21,19 @@ class App extends Component {
         
   }
   render() {
+    const UserPageComponent = () => (
+        <UserPage users={this.state.users} />
+    )
+
+    const SearchPageComponent = () => <SearchPage />
     return (
-      <div className="App">
-        
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path="/users" render={UserPageComponent}/>
+            <Route exact path="/search" render={SearchPageComponent}/>
+          </Switch>
+        </Router>
       </div>
     );
   }
