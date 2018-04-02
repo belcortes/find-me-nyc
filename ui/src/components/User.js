@@ -8,6 +8,15 @@ const User = (props) => {
         <div id={`user-${props.user.id}-user-name`}>
           {props.user.userName}
         </div>
+        <div id={`user-${props.user.id}-first-name`}>
+          {props.user.firstName}
+        </div>
+        <div id={`user-${props.user.id}-last-name`}>
+          {props.user.lastName}
+        </div>
+        <div id={`user-${props.user.id}-last-search`}>
+          {props.user.lastSearch}
+        </div>
       </div>
     </div>
   )
