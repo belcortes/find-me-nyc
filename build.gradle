@@ -70,7 +70,6 @@ task stopUIDevServer(type: Exec) {
 
 test {
 	dependsOn cleanTest
-//	dependsOn waitForUsers
 	dependsOn startUIDevServer
 
 	testLogging {
@@ -85,9 +84,7 @@ test.finalizedBy(composeDown)
 
 task allTests(type: Test) {
 	dependsOn cleanTest
-//	dependsOn waitForUsers
 	dependsOn startUIDevServer
-//	dependsOn runUsersTests
 
 	testLogging {
 		exceptionFormat "full"
