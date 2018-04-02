@@ -1,4 +1,4 @@
-package com.example.findmenyc;
+package com.example.findmenyc.features;
 
 import com.example.findmenyc.models.User;
 import com.example.findmenyc.repositories.UserRepository;
