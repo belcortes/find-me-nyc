@@ -27,6 +27,8 @@ public class UserRepositoryTest {
 
     @Before
     public void setUp() {
+        entityManager.clear();
+
         User firstUser = new User(
                 "user1",
                 "First",
