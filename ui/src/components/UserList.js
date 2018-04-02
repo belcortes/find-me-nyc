@@ -5,7 +5,7 @@ import User from './User'
 const UserPage = (props) => {
 
   return (
-    <div>
+    <div id="users-wrapper">
       <h2>UserList Component</h2>
       {
         props.users.map((user, index) => {
