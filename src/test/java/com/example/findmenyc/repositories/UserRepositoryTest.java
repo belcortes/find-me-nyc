@@ -56,4 +56,49 @@ public class UserRepositoryTest {
 
         assertThat(Iterables.size(usersFromDb), is(2));
     }
+
+    @Test
+    public void findAll_returnsUserName() {
+        Iterable<User> usersFromDb = userRepository.findAll();
+
+        String secondUsersUserName = Iterables.get(usersFromDb, 1).getUserName();
+
+        assertThat(secondUsersUserName, is("user2"));
+    }
+
+    @Test
+    public void findAll_returnsFirstName() {
+        Iterable<User> usersFromDb = userRepository.findAll();
+
+        String secondUsersFirstName = Iterables.get(usersFromDb, 1).getFirstName();
+
+        assertThat(secondUsersFirstName, is("Second"));
+    }
+
+    @Test
+    public void findAll_returnsLastName() {
+        Iterable<User> usersFromDb = userRepository.findAll();
+
+        String secondUsersLastName = Iterables.get(usersFromDb, 1).getLastName();
+
+        assertThat(secondUsersLastName, is("User"));
+    }
+
+    @Test
+    public void findAll_returnsLastSearch() {
+        Iterable<User> usersFromDb = userRepository.findAll();
+
+        String secondUsersLastSearch = Iterables.get(usersFromDb, 1).getLastSearch();
+
+        assertThat(secondUsersLastSearch, is("second search"));
+    }
+
+    @Test
+    public void findAll_returnsIsAdmin() {
+        Iterable<User> usersFromDb = userRepository.findAll();
+
+        boolean secondUsersIsAdmin= Iterables.get(usersFromDb, 1).isAdmin();
+
+        assertThat(secondUsersIsAdmin, is(true));
+    }
 }
