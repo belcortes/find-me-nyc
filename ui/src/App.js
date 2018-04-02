@@ -24,6 +24,21 @@ class App extends Component {
     }
   }
 
+  createUser = async (newUser) => {
+    try {
+        const newUserResponse = await axios.post('/users', newUser)
+        const newUserFromDatabase = newUserResponse.data
+
+        const updatedUsersList = [...this.state.users]
+        updatedUsersList.push(newUserFromDatabase)
+
+        this.setState({users: updatedUsersList})
+
+    } catch (error) {
+        console.log("Error creating new User")
+    }
+  }
+
   handleUserChange = (e, index) => {
     const attributeToChange = e.target.name
     const newValue = e.target.value
@@ -56,7 +71,7 @@ class App extends Component {
 
     const SearchPageComponent = () => <SearchPage />
 
-    const SignupComponent = () => <Signup />
+    const SignupComponent = () => <Signup createUser={this.createUser} />
 
     return (
       <div>
