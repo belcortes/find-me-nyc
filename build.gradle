@@ -18,23 +18,6 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'docker-compose'
 
-dockerCompose {
-	useComposeFiles = ['docker-compose.yml']
-	useComposeFiles = ['docker-compose.test.yml']
-}
-
-dockerCompose.isRequiredBy(test)
-
-test {
-	dependsOn cleanTest
-
-	testLogging {
-		exceptionFormat "full"
-		events "skipped", "passed", "failed"
-		displayGranularity 2
-	}
-}
-
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -65,3 +48,48 @@ dependencies {
 	testCompile 'org.seleniumhq.selenium:selenium-support:3.9.1'
 	testCompile 'com.codeborne:selenide:4.10.01'
 }
+
+task startUIDevServer(type: Exec) {
+	workingDir './ui'
+	commandLine 'pm2', 'start', 'node_modules/react-scripts/scripts/start.js', '-f', '--name', 'ui-test'
+}
+
+task stopUIDevServer(type: Exec) {
+	workingDir './ui'
+	commandLine 'pm2', 'stop', 'ui-test'
+}
+
+test {
+	dependsOn cleanTest
+	dependsOn startUIDevServer
+
+	testLogging {
+		exceptionFormat "full"
+		events "skipped", "passed", "failed"
+		displayGranularity 2
+	}
+}
+test.finalizedBy(stopUIDevServer)
+test.finalizedBy(composeDown)
+
+
+task allTests(type: Test) {
+	dependsOn cleanTest
+	dependsOn startUIDevServer
+
+	testLogging {
+		exceptionFormat "full"
+		events "skipped", "passed", "failed"
+		displayGranularity 2
+	}
+}
+allTests.finalizedBy(stopUIDevServer)
+allTests.finalizedBy(composeDown)
+
+dockerCompose {
+	useComposeFiles = ['docker-compose.yml']
+	useComposeFiles = ['docker-compose.test.yml']
+}
+
+dockerCompose.isRequiredBy(test)
+dockerCompose.isRequiredBy(allTests)
