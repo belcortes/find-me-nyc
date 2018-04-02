@@ -11,24 +11,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-
     axios.get('/users')
-        .then((response) => {
-          console.log(response)
-          this.setState({users: response.data})
-        })
-        .catch((error) => {
-            console.log('Error retrieving users!')
-            console.log(error)
-        })
-        
+      .then((response) => {
+        console.log(response)
+        this.setState({users: response.data})
+      })
+      .catch((error) => {
+          console.log('Error retrieving users!')
+          console.log(error)
+      })
   }
+
   render() {
     const UserPageComponent = () => (
         <UserPage users={this.state.users} />
     )
 
     const SearchPageComponent = () => <SearchPage />
+    
     return (
       <div>
         <Router>

@@ -49,6 +49,10 @@ dependencies {
 	testCompile 'com.codeborne:selenide:4.10.01'
 }
 
+task waitForUsers(type: Exec) {
+	commandLine './wait-for-api.sh', 'http://localhost:8080/users', 'Users'
+}
+
 task startUIDevServer(type: Exec) {
 	workingDir './ui'
 	commandLine 'pm2', 'start', 'node_modules/react-scripts/scripts/start.js', '-f', '--name', 'ui-test'
@@ -61,6 +65,7 @@ task stopUIDevServer(type: Exec) {
 
 test {
 	dependsOn cleanTest
+	dependsOn waitForUsers
 	dependsOn startUIDevServer
 
 	testLogging {
@@ -75,6 +80,7 @@ test.finalizedBy(composeDown)
 
 task allTests(type: Test) {
 	dependsOn cleanTest
+	dependsOn waitForUsers
 	dependsOn startUIDevServer
 
 	testLogging {
