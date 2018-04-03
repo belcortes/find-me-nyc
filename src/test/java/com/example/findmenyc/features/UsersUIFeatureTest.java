@@ -143,5 +143,7 @@ public class UsersUIFeatureTest {
 
         $("#result-list").should(appear);
         $("#result-item").should(appear);
+
+        $$("[data-result-display]").shouldHave(size(20));
     }
 }

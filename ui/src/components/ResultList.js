@@ -8,16 +8,16 @@ const ResultList = (props) => {
     <div id='result-list'>
       <h1>Result List</h1>
       {
-        props.results.map((result, index) => {
+        props.results.slice(0, 20).map((result, index) => {
           {console.log(result.agency_name)}
-          if (index === 20){return false}
-          return (
+            return (
 
-            <Result
-              result={result}
-              key={index}
-              index={index} />
-          )
+              <Result
+                result={result}
+                key={index}
+                index={index} />
+            ) 
+          
         })
       }
     </div>
