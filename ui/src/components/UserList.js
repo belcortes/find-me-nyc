@@ -13,7 +13,8 @@ const UserPage = (props) => {
 	const titleStyles = {
 		textAlign: "center",
 		marginTop: "50px",
-		marginBottom: "70px"
+		marginBottom: "70px",
+		color: "gray"
 	}
 
 	const usersListStyles = {
@@ -28,7 +29,7 @@ const UserPage = (props) => {
     <div id="users-wrapper">
     	<Navbar />
     	<div style={usersContainerStyles}>
-    		<h2 style={titleStyles}>Admin</h2>
+    		<h1 style={titleStyles}>Admin</h1>
     		<div style={usersListStyles}>
     			{
 		        props.users.map((user, index) => {

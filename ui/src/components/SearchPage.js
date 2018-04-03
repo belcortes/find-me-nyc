@@ -64,7 +64,7 @@ class SearchPage extends Component {
 	    <div id="search-wrapper">
 	    	<Navbar />
 	    	<div style={searchContainerStyles}>
-	    		<h2>Find the data you need!</h2>
+	    		<h1>Find the data you need!</h1>
 	    		<p id='search-blurb' style={blurbStyles}>Search for public hearings and meetings, public auctions and sales, solicitations and awards and official rules proposed and adopted by city agencies.</p>
 		      <div>
 		        <form style={formStyles} id='search-form' onSubmit={this.handleSubmit}>

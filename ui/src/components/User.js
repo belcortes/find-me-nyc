@@ -20,7 +20,8 @@ class User extends Component {
       padding: "20px",
       flexGrow: "1",
       marginRight: "60px",
-      marginBottom: "30px"
+      marginBottom: "30px",
+      border: "1px solid lightgray"
     }
     const userFieldStyles = {
       marginBottom: "15px"
@@ -30,14 +31,19 @@ class User extends Component {
       marginLeft: "10px"
     }
 
+    const boldStyles = {
+      color: "gray",
+      marginTop: "0"
+    }
+
     return (
 
       <div style={usersItemStyles}>
         <div id={`user-${this.props.user.id}`} data-user-display>
           <div style={userFieldStyles} id={`user-${this.props.user.id}-first-and-last-name`}>
-            <b>{this.props.user.firstName}
+            <h3 style={boldStyles}>{this.props.user.firstName}
             {' '}
-            {this.props.user.lastName}</b>
+            {this.props.user.lastName}</h3>
           </div>
           <div style={userFieldStyles} id={`user-${this.props.user.id}-user-name`}>
             {this.props.user.userName}
