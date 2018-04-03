@@ -25,7 +25,8 @@ class SearchPage extends Component {
 			width: "80%",
     	margin:" 0 auto",
     	textAlign: "center",
-    	fontFamily: "avenir"
+    	fontFamily: "avenir",
+    	marginTop: "50px"
 		}
 
 		const blurbStyles = {
@@ -33,7 +34,15 @@ class SearchPage extends Component {
 			textAlign: "left",
 			color: "gray",
 			margin: "0 auto",
-			marginBottom: "50px"
+			marginBottom: "50px",
+			marginTop: "50px"
+		}
+
+		const searchInputStyles = {
+			width: "300px",
+    	height: "40px",
+    	padding: "0 10px",
+    	fontSize: "20px"
 		}
 
 		return (
@@ -44,7 +53,7 @@ class SearchPage extends Component {
 	    		<p id='search-blurb' style={blurbStyles}>Search for public hearings and meetings, public auctions and sales, solicitations and awards and official rules proposed and adopted by city agencies.</p>
 		      <div>
 		        <form id='search-form' onSubmit={this.handleSubmit}>
-		          <input id='search-input' name="search" type="text" placeholder="Search" onChange={this.saveNewInput}/>
+		          <input id='search-input' style={searchInputStyles} name="search" type="text" placeholder="Search" onChange={this.saveNewInput}/>
 		          <input id='search-submit' type="submit" value="Search"/>
 		        </form>
 		      </div>

@@ -6,7 +6,7 @@ const ResultList = (props) => {
 
   return (
     <div id='result-list'>
-      <h1>Result List</h1>
+      <h1>Results</h1>
       {
         props.results.slice(0, 20).map((result, index) => {
           return (

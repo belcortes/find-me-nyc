@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
     
 class Signup extends Component {
   state = {
     user: {},
-    redirectToUsersPage: false
+    redirectToSearchPage: false
   }
 
   handleSubmit = (e) => {
@@ -12,7 +12,7 @@ class Signup extends Component {
 
     this.props.createUser(this.state.user)
 
-    this.setState({redirectToUsersPage: true})
+    this.setState({redirectToSearchPage: true})
   }
 
   handleChange = (e) => {
@@ -25,8 +25,9 @@ class Signup extends Component {
   }
 
   render() {
-    if(this.state.redirectToUsersPage) {
-      return <Redirect to="/admin" />
+    // found this redirect trick online
+    if(this.state.redirectToSearchPage) {
+      return <Redirect to="/search" />
     }
 
     return (
@@ -67,6 +68,7 @@ class Signup extends Component {
                   value="Create" />
             </div>
           </form>
+          <Link to="/login">or login if you already have an account</Link>
       </div>
     )
   }

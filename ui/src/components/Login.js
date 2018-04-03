@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link} from 'react-router-dom'
     
 class Signup extends Component {
   state = {
@@ -17,13 +17,13 @@ class Signup extends Component {
 
     this.props.users.forEach((user) => {
       if(user.userName === this.state.username) {
-        console.log('matching!')
         this.setState({redirectToSearchPage: true})
       }
     })
   }
 
   render() {
+    // found this redirect trick online
     if(this.state.redirectToSearchPage) {
       return <Redirect to="/search" />
     }
@@ -31,23 +31,25 @@ class Signup extends Component {
     return (
       <div>
         <h2>Login</h2>
-          <form onSubmit={this.handleSubmit} id="login-form">
-            <div>
-              <label htmlFor="userName">Username </label>
-              <input
-                  id="login-user-name"
-                  type="text"
-                  name="userName"
-                  onChange={this.saveUserInput} />
-            </div>
+        <p>{this.state.error}</p>
+        <form onSubmit={this.handleSubmit} id="login-form">
+          <div>
+            <label htmlFor="userName">Username </label>
+            <input
+                id="login-user-name"
+                type="text"
+                name="userName"
+                onChange={this.saveUserInput} />
+          </div>
 
-            <div>
-              <input
-                  id="user-login-submit"
-                  type="submit"
-                  value="Login" />
-            </div>
-          </form>
+          <div>
+            <input
+                id="user-login-submit"
+                type="submit"
+                value="Login" />
+          </div>
+        </form>
+        <Link to="/signup">or sign up if you don't have an account</Link>
       </div>
     )
   }

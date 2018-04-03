@@ -4,8 +4,10 @@ const Result = (props) => {
 
   return (
     <div id="result-item" data-result-display>
-      <h2>Result</h2>
-      <p>{props.result.agency_name}</p>
+      <h3>{props.result.agency_name}</h3>
+      <p>{props.result.section_name}</p>
+      <p>{props.result.short_title}</p>
+      <p>{props.result.start_date}</p>
     </div>
   )
 }
