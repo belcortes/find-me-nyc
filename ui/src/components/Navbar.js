@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div id='navbar' style={wrapperStyles}>
-      <img style={logoStyles} src={logo} />
+      <img style={logoStyles} src={logo} alt="logo"/>
       <div>
       	<Link style={linkItemStyles} to="/admin">admin</Link>
       	<Link style={linkItemStyles} to="/search">search</Link>

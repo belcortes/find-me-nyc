@@ -109,18 +109,24 @@ public class UsersUIFeatureTest {
         $("#new-user-last-name").sendKeys("User");
         $("#new-user-submit").click();
 
-        // Make sure we're now on the users page again
+        // Make sure we're now on the search page
+        $("#search-wrapper").should(appear);
+
+        //Go to admin page
+        open("http://localhost:3000/admin");
+
+        //check to see if users wrapper is on the page
         $("#users-wrapper").should(appear);
 
-        // Now there should be three Users
+        // Now there should be one user - the recently created one
         $$("[data-user-display]").shouldHave(size(1));
 
         refresh();
 
-        // Now there should be three Users again after the refresh
+        // Now there should be one user again after the refresh
         $$("[data-user-display]").shouldHave(size(1));
 
-        // Check that the data is showing up for the third User
+        // Check that the data is showing up for the User
         Long thirdUserId = 1L;
         $("#user-" + thirdUserId + "-user-name").shouldHave(text("third_user"));
         $("#user-" + thirdUserId + "-first-and-last-name").shouldHave(text("Third User"));
