@@ -109,7 +109,7 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path="/users" render={UserListComponent}/>
+            <Route exact path="/admin" render={UserListComponent}/>
             <Route exact path="/search" render={SearchPageComponent}/>
             <Route exact path="/signup" render={SignupComponent}/>
           </Switch>

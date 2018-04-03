@@ -60,7 +60,7 @@ public class UsersUIFeatureTest {
 
         System.setProperty("selenide.browser", "Chrome");
 
-        open("http://localhost:3000/users");
+        open("http://localhost:3000/admin");
 
         $$("[data-user-display]").shouldHave(size(2));
 

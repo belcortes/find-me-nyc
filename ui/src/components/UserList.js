@@ -8,7 +8,7 @@ const UserPage = (props) => {
   return (
     <div id="users-wrapper">
     	<Navbar />
-      <h2>UserList Component</h2>
+      <h2>Admin</h2>
       {
         props.users.map((user, index) => {
           return (

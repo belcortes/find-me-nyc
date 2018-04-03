@@ -26,7 +26,7 @@ class Signup extends Component {
 
   render() {
     if(this.state.redirectToUsersPage) {
-      return <Redirect to="/users" />
+      return <Redirect to="/admin" />
     }
 
     return (
