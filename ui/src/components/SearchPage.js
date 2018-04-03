@@ -37,7 +37,7 @@ class SearchPage extends Component {
 		}
 
 		return (
-	    <div>
+	    <div id="search-wrapper">
 	    	<Navbar />
 	    	<div style={searchContainerStyles}>
 	    		<h2>Find the data you need!</h2>

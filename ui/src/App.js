@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios'
 
 import UserList from './components/UserList'
 import SearchPage from './components/SearchPage'
 import Signup from './components/Signup'
+import Login from './components/Login'
 
 class App extends Component {
   state = {
@@ -105,6 +106,8 @@ class App extends Component {
 
     const SignupComponent = () => <Signup createUser={this.createUser} />
 
+    const LoginComponent = () => <Login users={this.state.users} />
+
     return (
       <div>
         <Router>
@@ -112,6 +115,7 @@ class App extends Component {
             <Route exact path="/admin" render={UserListComponent}/>
             <Route exact path="/search" render={SearchPageComponent}/>
             <Route exact path="/signup" render={SignupComponent}/>
+            <Route exact path="/login" render={LoginComponent}/>
           </Switch>
         </Router>
       </div>

@@ -66,12 +66,12 @@ public class UsersUIFeatureTest {
 
         // Test that all data shows up for each user
         $("#user-" + firstUserId + "-user-name").shouldHave(text("user1"));
-        $("#user-" + firstUserId + "-first-and-last-name").shouldHave(text("FirstUser"));
+        $("#user-" + firstUserId + "-first-and-last-name").shouldHave(text("First User"));
         $("#user-" + firstUserId + "-last-search").shouldHave(text("first search"));
         $("#user-" + firstUserId + "-admin").shouldHave(text("No"));
 
         $("#user-" + secondUserId + "-user-name").shouldHave(text("user2"));
-        $("#user-" + secondUserId + "-first-and-last-name").shouldHave(text("SecondUser"));
+        $("#user-" + secondUserId + "-first-and-last-name").shouldHave(text("Second User"));
         $("#user-" + secondUserId + "-last-search").shouldHave(text("second search"));
         $("#user-" + secondUserId + "-admin").shouldHave(text("Yes"));
 
@@ -123,8 +123,26 @@ public class UsersUIFeatureTest {
         // Check that the data is showing up for the third User
         Long thirdUserId = 1L;
         $("#user-" + thirdUserId + "-user-name").shouldHave(text("third_user"));
-        $("#user-" + thirdUserId + "-first-and-last-name").shouldHave(text("ThirdUser"));
+        $("#user-" + thirdUserId + "-first-and-last-name").shouldHave(text("Third User"));
 
+    }
+
+    @Test
+    public void shouldAllowLoginFunctionalityForAUser() throws Exception {
+
+        System.setProperty("selenide.browser", "Chrome");
+
+        open("http://localhost:3000/login");
+
+        $("#login-form").should(appear);
+
+        // Add a new user
+        $("#login-user-name").sendKeys("third_user");
+        $("#user-login-submit").click();
+
+        // Make sure we're now on the users page again
+        $("#search-wrapper").should(appear);
+        
     }
 
     @Test

@@ -21,8 +21,9 @@ const User = (props) => {
     <div style={usersItemStyles}>
       <div id={`user-${props.user.id}`} data-user-display>
         <div style={userFieldStyles} id={`user-${props.user.id}-first-and-last-name`}>
-          {props.user.firstName}
-          {props.user.lastName}
+          <b>{props.user.firstName}
+          {' '}
+          {props.user.lastName}</b>
         </div>
         <div style={userFieldStyles} id={`user-${props.user.id}-user-name`}>
           {props.user.userName}

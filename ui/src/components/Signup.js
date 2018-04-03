@@ -31,7 +31,7 @@ class Signup extends Component {
 
     return (
       <div>
-        <h2>Signup Page</h2>
+        <h2>Signup</h2>
           <form onSubmit={this.handleSubmit} id="signup-form">
             <div>
               <label htmlFor="userName">Username </label>
