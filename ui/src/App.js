@@ -9,6 +9,7 @@ import Signup from './components/Signup'
 class App extends Component {
   state = {
     users: [],
+    results: [],
     searchInput: ''
   }
 
@@ -63,8 +64,17 @@ class App extends Component {
     }
   }
 
-  searchSubmit = (searchInput) => {
+  handleSearchSubmit = (searchInput) => {
     this.setState({searchInput})
+    axios.get(`https://data.cityofnewyork.us/resource/buex-bi6w.json?section_name=Public%20Hearings%20and%20Meetings`)
+      .then((response) => {
+        console.log(response.data)
+        this.setState({results: response.data})
+      })
+      .catch((error) => {
+          console.log('Error retrieving users!')
+          console.log(error)
+      })
   }
 
   componentDidMount() {
@@ -88,7 +98,10 @@ class App extends Component {
           updateUser={this.updateUser} />
     )
 
-    const SearchPageComponent = () => <SearchPage searchSubmit={this.searchSubmit} />
+    const SearchPageComponent = () => (
+      <SearchPage 
+        results={this.state.results}
+        handleSearchSubmit={this.handleSearchSubmit} />)
 
     const SignupComponent = () => <Signup createUser={this.createUser} />
 

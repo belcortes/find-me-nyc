@@ -17,7 +17,7 @@ class SearchPage extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
     this.setState({'submitted': true });
-    this.props.searchSubmit(this.state.searchInput)
+    this.props.handleSearchSubmit(this.state.searchInput)
 	}
 
 	render() {
@@ -33,7 +33,7 @@ class SearchPage extends Component {
 	      </div>
 	      {
 	      	this.state.submitted ?
-	      	<ResultList /> : null
+	      	<ResultList results={this.props.results} /> : null
 	      }
 	    </div>
 	  )
