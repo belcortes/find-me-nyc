@@ -66,14 +66,12 @@ public class UsersUIFeatureTest {
 
         // Test that all data shows up for each user
         $("#user-" + firstUserId + "-user-name").shouldHave(text("user1"));
-        $("#user-" + firstUserId + "-first-name").shouldHave(text("First"));
-        $("#user-" + firstUserId + "-last-name").shouldHave(text("User"));
+        $("#user-" + firstUserId + "-first-and-last-name").shouldHave(text("FirstUser"));
         $("#user-" + firstUserId + "-last-search").shouldHave(text("first search"));
         $("#user-" + firstUserId + "-admin").shouldHave(text("No"));
 
         $("#user-" + secondUserId + "-user-name").shouldHave(text("user2"));
-        $("#user-" + secondUserId + "-first-name").shouldHave(text("Second"));
-        $("#user-" + secondUserId + "-last-name").shouldHave(text("User"));
+        $("#user-" + secondUserId + "-first-and-last-name").shouldHave(text("SecondUser"));
         $("#user-" + secondUserId + "-last-search").shouldHave(text("second search"));
         $("#user-" + secondUserId + "-admin").shouldHave(text("Yes"));
 
@@ -125,8 +123,7 @@ public class UsersUIFeatureTest {
         // Check that the data is showing up for the third User
         Long thirdUserId = 1L;
         $("#user-" + thirdUserId + "-user-name").shouldHave(text("third_user"));
-        $("#user-" + thirdUserId + "-first-name").shouldHave(text("Third"));
-        $("#user-" + thirdUserId + "-last-name").shouldHave(text("User"));
+        $("#user-" + thirdUserId + "-first-and-last-name").shouldHave(text("ThirdUser"));
 
     }
 
