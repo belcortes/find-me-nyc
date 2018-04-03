@@ -129,6 +129,15 @@ public class UsersUIFeatureTest {
 
     @Test
     public void shouldAllowLoginFunctionalityForAUser() throws Exception {
+        User firstUser = new User(
+                "user1",
+                "First",
+                "User",
+                "first search",
+                false
+        );
+        firstUser = userRepository.save(firstUser);
+        String firstUserUsername = firstUser.getUserName();
 
         System.setProperty("selenide.browser", "Chrome");
 
@@ -137,12 +146,12 @@ public class UsersUIFeatureTest {
         $("#login-form").should(appear);
 
         // Add a new user
-        $("#login-user-name").sendKeys("third_user");
+        $("#login-user-name").sendKeys("user1");
         $("#user-login-submit").click();
 
         // Make sure we're now on the users page again
         $("#search-wrapper").should(appear);
-        
+
     }
 
     @Test
