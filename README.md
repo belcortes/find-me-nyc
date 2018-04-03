@@ -4,7 +4,7 @@
 
  - Users can search for public NYC data
 
--  City employees can view and manage users searching their data
+ -  City employees can view and manage users searching their data
 
 ####How to start the application:
 
