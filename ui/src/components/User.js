@@ -1,20 +1,29 @@
 import React from 'react'
 
 const User = (props) => {
+  const usersItemStyles = {
+    padding: "30px",
+    flexGrow: "1"
+    // margin: "0 auto",
+    // marginRight: "30px"
+  }
+  const userFieldStyles = {
+    marginBottom: "15px"
+  }
+
   return (
-    <div>
-      <h2>User Component</h2>
+    <div style={usersItemStyles}>
       <div id={`user-${props.user.id}`} data-user-display>
-        <div id={`user-${props.user.id}-user-name`}>
+        <div style={userFieldStyles} id={`user-${props.user.id}-user-name`}>
           {props.user.userName}
         </div>
-        <div id={`user-${props.user.id}-first-name`}>
+        <div style={userFieldStyles} id={`user-${props.user.id}-first-name`}>
           {props.user.firstName}
         </div>
-        <div id={`user-${props.user.id}-last-name`}>
+        <div style={userFieldStyles} id={`user-${props.user.id}-last-name`}>
           {props.user.lastName}
         </div>
-        <div id={`user-${props.user.id}-last-search`}>
+        <div style={userFieldStyles} id={`user-${props.user.id}-last-search`}>
           {props.user.lastSearch}
         </div>
         
@@ -22,6 +31,7 @@ const User = (props) => {
           props.user.admin ?
           <select 
             id={`user-${props.user.id}-admin`}
+            style={userFieldStyles}
             onChange={(e) => {
               props.handleUserChange(e, props.index)
               props.updateUser(props.index)
@@ -32,6 +42,7 @@ const User = (props) => {
           :
           <select 
             id={`user-${props.user.id}-admin`}
+            style={userFieldStyles}
             onChange={(e) => {
               props.handleUserChange(e, props.index)
               props.updateUser(props.index)
@@ -40,7 +51,6 @@ const User = (props) => {
             <option selected name='admin' value="false">No</option>
           </select>
         }
-          
         <button
           id={`delete-user-${props.user.id}`}
           onClick={() => props.deleteUser(props.user.id, props.index)}>

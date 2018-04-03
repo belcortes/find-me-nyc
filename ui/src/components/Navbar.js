@@ -9,7 +9,8 @@ const Navbar = () => {
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginTop: "10px"
+    marginTop: "10px",
+    fontFamily: "avenir"
   }
 
   const logoStyles = {

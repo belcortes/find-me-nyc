@@ -21,10 +21,11 @@ class SearchPage extends Component {
 	}
 
 	render() {
-		const navContainerStyles = {
+		const searchContainerStyles = {
 			width: "80%",
     	margin:" 0 auto",
-    	textAlign: "center"
+    	textAlign: "center",
+    	fontFamily: "avenir"
 		}
 
 		const blurbStyles = {
@@ -38,8 +39,8 @@ class SearchPage extends Component {
 		return (
 	    <div>
 	    	<Navbar />
-	    	<div style={navContainerStyles}>
-	    		<h1>Search Page</h1>
+	    	<div style={searchContainerStyles}>
+	    		<h2>Find the data you need!</h2>
 	    		<p id='search-blurb' style={blurbStyles}>Search for public hearings and meetings, public auctions and sales, solicitations and awards and official rules proposed and adopted by city agencies.</p>
 		      <div>
 		        <form id='search-form' onSubmit={this.handleSubmit}>

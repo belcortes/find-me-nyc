@@ -49,7 +49,6 @@ dependencies {
 	testCompile 'com.codeborne:selenide:4.10.01'
 }
 
-
 task startUIDevServer(type: Exec) {
 	workingDir './ui'
 	commandLine 'pm2', 'start', 'node_modules/react-scripts/scripts/start.js', '-f', '--name', 'ui-test'
