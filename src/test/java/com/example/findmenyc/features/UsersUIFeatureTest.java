@@ -142,5 +142,6 @@ public class UsersUIFeatureTest {
         $("#search-submit").click();
 
         $("#result-list").should(appear);
+        $("#result-item").should(appear);
     }
 }
