@@ -27,11 +27,20 @@ class SearchPage extends Component {
     	textAlign: "center"
 		}
 
+		const blurbStyles = {
+			width: "60%",
+			textAlign: "left",
+			color: "gray",
+			margin: "0 auto",
+			marginBottom: "50px"
+		}
+
 		return (
 	    <div>
 	    	<Navbar />
 	    	<div style={navContainerStyles}>
 	    		<h1>Search Page</h1>
+	    		<p id='search-blurb' style={blurbStyles}>Search for public hearings and meetings, public auctions and sales, solicitations and awards and official rules proposed and adopted by city agencies.</p>
 		      <div>
 		        <form id='search-form' onSubmit={this.handleSubmit}>
 		          <input id='search-input' name="search" type="text" placeholder="Search" onChange={this.saveNewInput}/>

@@ -27,6 +27,7 @@ const Navbar = () => {
       <div>
       	<Link style={linkItemStyles} to="/admin">admin</Link>
       	<Link style={linkItemStyles} to="/search">search</Link>
+      	<Link style={linkItemStyles} to="/signup">logout</Link>
       </div>
     </div>
   )
