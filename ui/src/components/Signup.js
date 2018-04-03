@@ -30,34 +30,57 @@ class Signup extends Component {
       return <Redirect to="/search" />
     }
 
+    const containerStyles = {
+      alignItems: "center",
+      height: "100vh",
+      justifyContent: "center",
+      display: "flex",
+      width: "100vw",
+      flexDirection: "column"
+    }
+
+    const inputStyles = {
+      margin: "10px 0",
+      padding: "0 10px",
+      height: "30px"
+    }
+
+    const buttonStyles = {
+      width: "100%",
+      marginBottom: "20px"
+    }
+
     return (
-      <div>
+      <div style={containerStyles}>
         <h2>Signup</h2>
           <form onSubmit={this.handleSubmit} id="signup-form">
             <div>
-              <label htmlFor="userName">Username </label>
               <input
                   id="new-user-user-name"
                   type="text"
                   name="userName"
+                  placeholder='username'
+                  style={inputStyles}
                   onChange={this.handleChange} />
             </div>
 
             <div>
-              <label htmlFor="firstName">First Name </label>
               <input
                   id="new-user-first-name"
                   type="text"
                   name="firstName"
+                  placeholder='first name'
+                  style={inputStyles}
                   onChange={this.handleChange} />
             </div>
 
             <div>
-              <label htmlFor="lastName">Last Name </label>
               <input
                   id="new-user-last-name"
                   type="text"
                   name="lastName"
+                  placeholder='last name'
+                  style={inputStyles}
                   onChange={this.handleChange} />
             </div>
 
@@ -65,6 +88,7 @@ class Signup extends Component {
               <input
                   id="new-user-submit"
                   type="submit"
+                  style={buttonStyles}
                   value="Create" />
             </div>
           </form>

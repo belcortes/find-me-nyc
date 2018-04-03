@@ -28,25 +28,47 @@ class Signup extends Component {
       return <Redirect to="/search" />
     }
 
+    const containerStyles = {
+      alignItems: "center",
+      height: "100vh",
+      justifyContent: "center",
+      display: "flex",
+      width: "100vw",
+      flexDirection: "column"
+    }
+
+    const inputStyles = {
+      marginBottom: "20px",
+      padding: "0 10px",
+      height: "30px"
+    }
+
+    const buttonStyles = {
+      width: "100%",
+      marginBottom: "20px"
+    }
+
     return (
-      <div>
+      <div style={containerStyles}>
         <h2>Login</h2>
         <p>{this.state.error}</p>
         <form onSubmit={this.handleSubmit} id="login-form">
           <div>
-            <label htmlFor="userName">Username </label>
             <input
-                id="login-user-name"
-                type="text"
-                name="userName"
-                onChange={this.saveUserInput} />
+              id="login-user-name"
+              type="text"
+              name="userName"
+              placeholder='username'
+              style={inputStyles}
+              onChange={this.saveUserInput} />
           </div>
 
           <div>
             <input
-                id="user-login-submit"
-                type="submit"
-                value="Login" />
+              id="user-login-submit"
+              type="submit"
+              style={buttonStyles}
+              value="Login" />
           </div>
         </form>
         <Link to="/signup">or sign up if you don't have an account</Link>
