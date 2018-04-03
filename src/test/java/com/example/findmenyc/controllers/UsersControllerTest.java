@@ -389,11 +389,11 @@ public class UsersControllerTest {
     @Test
     public void updateUserById_failure_userNotFoundReturns404() throws Exception {
 
-//        Optional.ofNullable(null);
-
         this.mockMvc
                 .perform(
                         patch("/users/4")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(jsonObjectMapper.writeValueAsString(updatedSecondUser))
                 )
                 .andExpect(status().isNotFound());
     }

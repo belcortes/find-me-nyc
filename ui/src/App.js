@@ -8,7 +8,8 @@ import Signup from './components/Signup'
 
 class App extends Component {
   state = {
-    users: []
+    users: [],
+    searchInput: ''
   }
 
   deleteUser = async (userId, index) => {
@@ -39,40 +40,44 @@ class App extends Component {
     }
   }
 
-handleUserChange = (e, index) => {
-  const attributeToChange = e.target.name
-  console.log(attributeToChange)
-  const newValue = e.target.value
+  handleUserChange = (e, index) => {
+    const attributeToChange = e.target.name
+    console.log(attributeToChange)
+    const newValue = e.target.value
 
-  const updatedUsersList = [...this.state.users]
-  const userToUpdate = updatedUsersList[index]
-  userToUpdate[attributeToChange] = newValue
-  
-  this.setState({users: updatedUsersList})
-  console.log(this.state.users)
-}
-
-updateUser = async (index) => {
-  try {
-      const userToUpdate = this.state.users[index]
-      await axios.patch(`/users/${userToUpdate.id}`, userToUpdate)
-  } catch(error) {
-      console.log('Error updating idea!')
-      console.log(error)
+    const updatedUsersList = [...this.state.users]
+    const userToUpdate = updatedUsersList[index]
+    userToUpdate[attributeToChange] = newValue
+    
+    this.setState({users: updatedUsersList})
+    console.log(this.state.users)
   }
-}
 
-componentDidMount() {
-  axios.get('/users')
-    .then((response) => {
-      console.log(response)
-      this.setState({users: response.data})
-    })
-    .catch((error) => {
-        console.log('Error retrieving users!')
+  updateUser = async (index) => {
+    try {
+        const userToUpdate = this.state.users[index]
+        await axios.patch(`/users/${userToUpdate.id}`, userToUpdate)
+    } catch(error) {
+        console.log('Error updating idea!')
         console.log(error)
-    })
-}
+    }
+  }
+
+  searchSubmit = (searchInput) => {
+    this.setState({searchInput})
+  }
+
+  componentDidMount() {
+    axios.get('/users')
+      .then((response) => {
+        console.log(response)
+        this.setState({users: response.data})
+      })
+      .catch((error) => {
+          console.log('Error retrieving users!')
+          console.log(error)
+      })
+  }
 
   render() {
     const UserListComponent = () => (
@@ -83,7 +88,7 @@ componentDidMount() {
           updateUser={this.updateUser} />
     )
 
-    const SearchPageComponent = () => <SearchPage />
+    const SearchPageComponent = () => <SearchPage searchSubmit={this.searchSubmit} />
 
     const SignupComponent = () => <Signup createUser={this.createUser} />
 
