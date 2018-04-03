@@ -9,15 +9,13 @@ const ResultList = (props) => {
       <h1>Result List</h1>
       {
         props.results.slice(0, 20).map((result, index) => {
-          {console.log(result.agency_name)}
-            return (
+          return (
 
-              <Result
-                result={result}
-                key={index}
-                index={index} />
-            ) 
-          
+            <Result
+              result={result}
+              key={index}
+              index={index} />
+          ) 
         })
       }
     </div>

@@ -21,20 +21,28 @@ class SearchPage extends Component {
 	}
 
 	render() {
+		const navContainerStyles = {
+			width: "80%",
+    	margin:" 0 auto",
+    	textAlign: "center"
+		}
+
 		return (
 	    <div>
 	    	<Navbar />
-	      <h1>Search Page</h1>
-	      <div>
-	        <form id='search-form' onSubmit={this.handleSubmit}>
-	          <input id='search-input' name="search" type="text" placeholder="Search" onChange={this.saveNewInput}/>
-	          <input id='search-submit' type="submit" value="Search"/>
-	        </form>
-	      </div>
-	      {
-	      	this.state.submitted ?
-	      	<ResultList results={this.props.results} /> : null
-	      }
+	    	<div style={navContainerStyles}>
+	    		<h1>Search Page</h1>
+		      <div>
+		        <form id='search-form' onSubmit={this.handleSubmit}>
+		          <input id='search-input' name="search" type="text" placeholder="Search" onChange={this.saveNewInput}/>
+		          <input id='search-submit' type="submit" value="Search"/>
+		        </form>
+		      </div>
+		      {
+		      	this.state.submitted ?
+		      	<ResultList results={this.props.results} /> : null
+		      }
+	    	</div>
 	    </div>
 	  )
 	}
