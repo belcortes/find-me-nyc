@@ -34,7 +34,8 @@ class Signup extends Component {
       justifyContent: "center",
       display: "flex",
       width: "100vw",
-      flexDirection: "column"
+      flexDirection: "column",
+      color: "gray"
     }
 
     const inputStyles = {
@@ -45,7 +46,16 @@ class Signup extends Component {
 
     const buttonStyles = {
       width: "100%",
-      marginBottom: "20px"
+      marginBottom: "20px",
+      background: "#e46766",
+      border: "0",
+      color: "white",
+      padding: "10px"
+    }
+
+    const linkStyles = {
+      textDecoration: "none",
+      color: "#6cb6d8"
     }
 
     return (
@@ -71,7 +81,7 @@ class Signup extends Component {
               value="Login" />
           </div>
         </form>
-        <Link to="/signup">or sign up if you don't have an account</Link>
+        <Link style={linkStyles} to="/signup">or sign up if you don't have an account</Link>
       </div>
     )
   }

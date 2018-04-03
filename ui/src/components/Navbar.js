@@ -1,30 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+import logo from '../images/logo.png'
     
 const Navbar = () => {
 	const wrapperStyles = {
-    width: "80%",
-    margin:" 0 auto",
+    width: "95%",
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginTop: "10px",
+    margin: "10px 20px 0 20px",
     fontFamily: "avenir"
   }
 
   const logoStyles = {
-  	margin: "0"
+  	margin: "0",
+    height: "50px"
   }
 
   const linkItemStyles = {
   	marginLeft: "10px",
-  	textDecoration: "none"
+  	textDecoration: "none",
+    color: "#6cb6d8"
   }
 
   return (
     <div id='navbar' style={wrapperStyles}>
-      <h1 style={logoStyles}>Find Me NYC</h1>
+      <img style={logoStyles} src={logo} />
       <div>
       	<Link style={linkItemStyles} to="/admin">admin</Link>
       	<Link style={linkItemStyles} to="/search">search</Link>

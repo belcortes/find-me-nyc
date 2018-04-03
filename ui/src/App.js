@@ -57,8 +57,8 @@ class App extends Component {
 
   updateUser = async (index) => {
     try {
-        const userToUpdate = this.state.users[index]
-        await axios.patch(`/users/${userToUpdate.id}`, userToUpdate)
+      const userToUpdate = this.state.users[index]
+      await axios.patch(`/users/${userToUpdate.id}`, userToUpdate)
     } catch(error) {
         console.log('Error updating idea!')
         console.log(error)

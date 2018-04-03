@@ -38,11 +38,26 @@ class SearchPage extends Component {
 			marginTop: "50px"
 		}
 
+		const formStyles = {
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center"
+		}
+
 		const searchInputStyles = {
 			width: "300px",
     	height: "40px",
     	padding: "0 10px",
     	fontSize: "20px"
+		}
+
+		const buttonStyles = {
+			border: "0",
+    	background: "#e46766",
+    	height: "42px",
+    	color: "white",
+    	marginLeft: "20px",
+    	cursor: "pointer"
 		}
 
 		return (
@@ -52,9 +67,9 @@ class SearchPage extends Component {
 	    		<h2>Find the data you need!</h2>
 	    		<p id='search-blurb' style={blurbStyles}>Search for public hearings and meetings, public auctions and sales, solicitations and awards and official rules proposed and adopted by city agencies.</p>
 		      <div>
-		        <form id='search-form' onSubmit={this.handleSubmit}>
+		        <form style={formStyles} id='search-form' onSubmit={this.handleSubmit}>
 		          <input id='search-input' style={searchInputStyles} name="search" type="text" placeholder="Search" onChange={this.saveNewInput}/>
-		          <input id='search-submit' type="submit" value="Search"/>
+		          <input id='search-submit' style={buttonStyles} type="submit" value="Search"/>
 		        </form>
 		      </div>
 		      {
