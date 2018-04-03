@@ -2,10 +2,10 @@ version: '3'
 
 services:
   postgresdev:
-    image: postgres
-    ports:
-      - "5433:5432"
-    environment:
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=pgdev
+        image: postgres
+        ports:
+         - "5432:5432"
+        environment:
+         - POSTGRES_PASSWORD=password
+         - POSTGRES_USER=postgres
+         - POSTGRES_DB=pgdev
