@@ -26,7 +26,7 @@ public class UsersController {
     public Optional<User> findUserById(@PathVariable Long userId) throws NotFoundException {
         Optional<User> foundUser = userRepository.findById(userId);
 
-        if (foundUser == null) {
+        if (!foundUser.isPresent()) {
             throw new NotFoundException("User with ID of " + userId + " was not found!");
         }
 
@@ -41,19 +41,21 @@ public class UsersController {
     @PatchMapping("/users/{userId}")
     public User updateUserById(@PathVariable Long userId, @RequestBody User userRequest) throws NotFoundException {
 
-        User userFromDb = userRepository.findById(userId).orElse(null);
+        Optional<User> userFromDb = userRepository.findById(userId);
 
-        if (userFromDb == null) {
+        if (!userFromDb.isPresent()) {
             throw new NotFoundException("User with ID of " + userId + " was not found!");
         }
 
-        userFromDb.setUserName(userRequest.getUserName());
-        userFromDb.setFirstName(userRequest.getFirstName());
-        userFromDb.setLastName(userRequest.getLastName());
-        userFromDb.setLastSearch(userRequest.getLastSearch());
-        userFromDb.setAdmin(userRequest.isAdmin());
+        User foundUser = userFromDb.get();
 
-        return userRepository.save(userFromDb);
+        foundUser.setUserName(userRequest.getUserName());
+        foundUser.setFirstName(userRequest.getFirstName());
+        foundUser.setLastName(userRequest.getLastName());
+        foundUser.setLastSearch(userRequest.getLastSearch());
+        foundUser.setAdmin(userRequest.isAdmin());
+
+        return userRepository.save(foundUser);
     }
 
     @DeleteMapping("/users/{userId}")

@@ -87,7 +87,7 @@ public class UsersControllerTest {
 
         given(mockUserRepository.findAll()).willReturn(mockUsers);
         given(mockUserRepository.findById(1L)).willReturn(Optional.ofNullable(firstUser));
-        given(mockUserRepository.findById(4L)).willReturn(null);
+        given(mockUserRepository.findById(4L)).willReturn(Optional.ofNullable(null));
         given(mockUserRepository.save(newUser)).willReturn(newUser);
         given(mockUserRepository.save(updatedSecondUser)).willReturn(updatedSecondUser);
 
@@ -384,6 +384,30 @@ public class UsersControllerTest {
                                 .content(jsonObjectMapper.writeValueAsString(updatedSecondUser))
                 )
                 .andExpect(jsonPath("$.admin", is(true)));
+    }
+
+    @Test
+    public void updateUserById_failure_userNotFoundReturns404() throws Exception {
+
+//        Optional.ofNullable(null);
+
+        this.mockMvc
+                .perform(
+                        patch("/users/4")
+                )
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void updateUserById_failure_userNotFoundReturnsNotFoundErrorMessage() throws Exception {
+
+        this.mockMvc
+                .perform(
+                        patch("/users/4")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(jsonObjectMapper.writeValueAsString(updatedSecondUser))
+                )
+                .andExpect(status().reason(containsString("User with ID of 4 was not found!")));
     }
 
 }

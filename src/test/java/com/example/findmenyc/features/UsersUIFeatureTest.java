@@ -141,6 +141,6 @@ public class UsersUIFeatureTest {
         $("#search-input").sendKeys("new search");
         $("#search-submit").click();
 
-//        $("#search-form").should(appear);
+        $("#result-list").should(appear);
     }
 }
