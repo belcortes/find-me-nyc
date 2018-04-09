@@ -490,3 +490,6 @@ Download https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
 2018-04-09 18:03:23.211  INFO 69 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8761 (http)
 2018-04-09 18:03:23.213  INFO 69 --- [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
 2018-04-09 18:03:23.220  INFO 69 --- [           main] c.e.e.EurekaServerApplication            : Started EurekaServerApplication in 18.469 seconds (JVM running for 20.042)
+2018-04-09 18:07:10.534  INFO 69 --- [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-09 18:07:10.535  INFO 69 --- [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-09 18:07:10.624  INFO 69 --- [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 89 ms
