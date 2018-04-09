@@ -16,7 +16,7 @@ class App extends Component {
 
   deleteUser = async (userId, index) => {
     try {
-      await axios.delete(`/users/${userId}`)
+      await axios.delete(`${process.env.REACT_APP_USERS_API}/users/${userId}`)
 
       const updatedUsersList = [...this.state.users]
       updatedUsersList.splice(index, 1)
@@ -29,7 +29,7 @@ class App extends Component {
 
   createUser = async (newUser) => {
     try {
-        const newUserResponse = await axios.post('/users', newUser)
+        const newUserResponse = await axios.post(`${process.env.REACT_APP_USERS_API}/users`, newUser)
         const newUserFromDatabase = newUserResponse.data
 
         const updatedUsersList = [...this.state.users]
@@ -58,7 +58,7 @@ class App extends Component {
   updateUser = async (index) => {
     try {
       const userToUpdate = this.state.users[index]
-      await axios.patch(`/users/${userToUpdate.id}`, userToUpdate)
+      await axios.patch(`${process.env.REACT_APP_USERS_API}/users/${userToUpdate.id}`, userToUpdate)
     } catch(error) {
         console.log('Error updating idea!')
         console.log(error)
@@ -79,7 +79,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('/users')
+    axios.get(`${process.env.REACT_APP_USERS_API}/users`)
       .then((response) => {
         console.log(response)
         this.setState({users: response.data})
