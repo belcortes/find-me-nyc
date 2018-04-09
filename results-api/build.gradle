@@ -32,7 +32,6 @@ dependencyManagement {
 dependencies {
 	compile 'org.springframework.cloud:spring-cloud-starter-eureka'
 	compile 'org.springframework.boot:spring-boot-starter-web'
-	compile 'org.flywaydb:flyway-core'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 	compileOnly 'org.projectlombok:lombok'
@@ -41,4 +40,5 @@ dependencies {
 	runtime 'org.postgresql:postgresql'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile 'io.rest-assured:rest-assured:3.0.6'
 }

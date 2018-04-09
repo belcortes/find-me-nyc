@@ -17,6 +17,9 @@ public class Result {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "TITLE")
+    private String title;
+
     @Column(name = "LOCATION")
     private String location;
 
@@ -35,7 +38,8 @@ public class Result {
     @Column(name = "DATE_AND_TIME")
     private String dateAndTime;
 
-    public Result(String location, double lat, double lng, String section, String description, String dateAndTime) {
+    public Result(String title, String location, double lat, double lng, String section, String description, String dateAndTime) {
+        this.title = title;
         this.location = location;
         this.lat = lat;
         this.lng = lng;

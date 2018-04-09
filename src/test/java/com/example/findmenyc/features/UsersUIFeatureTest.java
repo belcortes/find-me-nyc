@@ -155,7 +155,7 @@ public class UsersUIFeatureTest {
         $("#login-user-name").sendKeys("user1");
         $("#user-login-submit").click();
 
-        // Make sure we're now on the users page again
+        // Make sure we're now on the search page again
         $("#search-wrapper").should(appear);
 
     }

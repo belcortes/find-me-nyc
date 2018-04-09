@@ -49,6 +49,15 @@ dependencies {
 	testCompile 'com.codeborne:selenide:4.10.01'
 }
 
+task runResultsAPITests(type: Exec) {
+	workingDir './results-api'
+	commandLine './gradlew', 'test'
+}
+
+task waitForResultsAPI(type: Exec) {
+	commandLine './wait-for-api.sh','http://localhost:8082', 'Results API'
+}
+
 task startUIDevServer(type: Exec) {
 	workingDir './ui'
 	commandLine 'pm2', 'start', 'node_modules/react-scripts/scripts/start.js', '-f', '--name', 'ui-test'
@@ -59,9 +68,11 @@ task stopUIDevServer(type: Exec) {
 	commandLine 'pm2', 'stop', 'ui-test'
 }
 
+
 test {
 	dependsOn cleanTest
 	dependsOn startUIDevServer
+	dependsOn waitForResultsAPI
 
 	testLogging {
 		exceptionFormat "full"
@@ -76,6 +87,8 @@ test.finalizedBy(composeDown)
 task allTests(type: Test) {
 	dependsOn cleanTest
 	dependsOn startUIDevServer
+	dependsOn waitForResultsAPI
+	dependsOn runResultsAPITests
 
 	testLogging {
 		exceptionFormat "full"
