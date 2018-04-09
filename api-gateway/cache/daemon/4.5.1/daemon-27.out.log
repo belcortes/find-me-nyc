@@ -197,3 +197,7 @@
 ]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@9f34ea1
 [2m2018-04-09 19:29:53.069[0;39m [32m INFO[0;39m [35m65[0;39m [2m---[0;39m [2m[erListUpdater-0][0;39m [36mc.netflix.config.ChainedDynamicProperty [0;39m [2m:[0;39m Flipping property: results.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
 [2m2018-04-09 19:34:09.767[0;39m [32m INFO[0;39m [35m65[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+[2m2018-04-09 19:39:09.769[0;39m [32m INFO[0;39m [35m65[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+[2m2018-04-09 20:35:14.728[0;39m [32m INFO[0;39m [35m65[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+[2m2018-04-09 20:40:14.730[0;39m [32m INFO[0;39m [35m65[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+thread 14: client disconnection detected, canceling the build
